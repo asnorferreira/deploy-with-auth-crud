@@ -15,3 +15,5 @@ routes.post(
 routes.use(middleware.verifyAuth);
 
 routes.get("/user", controller.getUser);
+
+routes.put("/user", middleware.verifyUser, controller.putUser);
