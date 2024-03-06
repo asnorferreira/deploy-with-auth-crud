@@ -11,3 +11,7 @@ routes.post(
   middleware.verifyUser,
   controller.postUser
 );
+
+routes.use(middleware.verifyAuth);
+
+routes.get("/user", controller.getUser);
