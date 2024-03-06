@@ -5,8 +5,8 @@ import middleware from "../middleware/index.js";
 export const routes = express();
 
 routes.post(
-    "/user",
-    middleware.verifyEmail,
-    middleware.verifyUser,
-    controller.postUser
-  );
+  "/",
+  middleware.verifyEmail,
+  middleware.verifyUser,
+  controller.postUser
+);

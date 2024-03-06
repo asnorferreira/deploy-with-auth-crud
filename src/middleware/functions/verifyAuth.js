@@ -13,7 +13,7 @@ export const verifyAuth = async (req, res, next) => {
   const token = authorization.split(" ")[1];
   try {
     const { id } = jwt.verify(token, process.env.JWT_PASS);
-    const auth = await knex("usuarios").select("*").where({ id });
+    const auth = await knex("usuarios").select("id").where({ id });
 
     if (auth.length !== 1) {
       return res.status(401).json({ error: "Invalid token" });
