@@ -8,7 +8,7 @@ export const postUser = async (req, res) => {
 
     const user = await knex("usuarios")
       .insert({ nome, email, senha: hash })
-      .returning(["nome", "email"]);
+      .returning(["email", "senha"]);
 
     return res.status(201).json(user[0]);
   } catch (error) {
